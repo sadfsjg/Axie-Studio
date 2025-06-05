@@ -1,0 +1,36 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hem",
+      "item": "https://www.axiestudio.se/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Funktioner",
+      "item": "https://www.axiestudio.se/sections/features"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bokningslösningar",
+      "item": "https://www.axiestudio.se/sections/showcase"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Jämförelse",
+      "item": "https://www.axiestudio.se/sections/comparison"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Priser",
+      "item": "https://www.axiestudio.se/sections/pricing"
+    }
+  ]
+}

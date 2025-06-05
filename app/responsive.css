@@ -1,0 +1,278 @@
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .mobile-scroll {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .mobile-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  .mobile-scroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+
+  .mobile-center {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-visible {
+    display: block !important;
+  }
+
+  .mobile-p-4 {
+    padding: 1rem !important;
+  }
+
+  .mobile-my-4 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .mobile-gap-4 {
+    gap: 1rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .tablet-scroll {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tablet-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tablet-scroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+
+  .tablet-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .tablet-hidden {
+    display: none !important;
+  }
+
+  .tablet-visible {
+    display: block !important;
+  }
+
+  .tablet-p-6 {
+    padding: 1.5rem !important;
+  }
+
+  .tablet-my-6 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .tablet-gap-6 {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Desktop optimizations */
+@media (min-width: 1025px) {
+  .desktop-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .desktop-grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .desktop-hidden {
+    display: none !important;
+  }
+
+  .desktop-visible {
+    display: block !important;
+  }
+
+  .desktop-p-8 {
+    padding: 2rem !important;
+  }
+
+  .desktop-my-8 {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .desktop-gap-8 {
+    gap: 2rem !important;
+  }
+}
+
+/* Improved horizontal scrolling for features */
+.features-scroll-container {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 1.5rem;
+}
+
+.features-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.features-scroll-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 85%;
+  margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .features-scroll-item {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-scroll-item {
+    width: 30%;
+  }
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.scroll-indicator-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator-dot.active {
+  background-color: #3b82f6;
+  transform: scale(1.2);
+}
+
+/* Swipe indicator animation for mobile */
+.swipe-indicator {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.75rem;
+  color: #4b5563;
+  pointer-events: none;
+  animation: fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Improved button styles for touch devices */
+@media (hover: none) {
+  button,
+  .btn,
+  [role="button"] {
+    padding-top: 0.625rem !important;
+    padding-bottom: 0.625rem !important;
+    min-height: 2.75rem !important;
+  }
+}
+
+/* Better spacing for mobile */
+@media (max-width: 640px) {
+  .section-spacing {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .section-spacing-sm {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .section-spacing-lg {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}

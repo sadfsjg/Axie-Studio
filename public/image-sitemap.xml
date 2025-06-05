@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.axiestudio.se/</loc>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg</image:loc>
+      <image:title>Axie Studio Logo</image:title>
+      <image:caption>Axie Studio - Bokningssystem som förenklar din vardag</image:caption>
+      <image:geo_location>Sweden</image:geo_location>
+      <image:license>https://www.axiestudio.se/license</image:license>
+    </image:image>
+  </url>
+  <!-- Add more URLs with images here -->
+</urlset>

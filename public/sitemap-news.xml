@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>https://www.axiestudio.se/blog</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Axie Studio</news:name>
+        <news:language>sv</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-03T12:00:00+02:00</news:publication_date>
+      <news:title>Senaste nytt om bokningssystem och digitala lösningar</news:title>
+      <news:keywords>bokningssystem, digitala lösningar, automation, webbplatser</news:keywords>
+      <news:stock_tickers>AXIE:SE</news:stock_tickers>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://www.axiestudio.se/blog/nya-funktioner-2025</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Axie Studio</news:name>
+        <news:language>sv</news:language>
+      </news:publication>
+      <news:publication_date>2025-05-01T10:00:00+02:00</news:publication_date>
+      <news:title>Nya funktioner i vårt bokningssystem för 2025</news:title>
+      <news:keywords>bokningssystem, nya funktioner, 2025, digitala lösningar</news:keywords>
+      <news:stock_tickers>AXIE:SE</news:stock_tickers>
+    </news:news>
+  </url>
+  
+  <url>
+    <loc>https://www.axiestudio.se/blog/ai-integration-2025</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Axie Studio</news:name>
+        <news:language>sv</news:language>
+      </news:publication>
+      <news:publication_date>2025-04-28T14:30:00+02:00</news:publication_date>
+      <news:title>AI-integration i bokningssystem: Framtiden är här</news:title>
+      <news:keywords>AI, bokningssystem, integration, framtiden, digitala lösningar</news:keywords>
+      <news:stock_tickers>AXIE:SE</news:stock_tickers>
+    </news:news>
+  </url>
+</urlset>

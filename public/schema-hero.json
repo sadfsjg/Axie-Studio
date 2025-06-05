@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebPageElement",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.axiestudio.se/#hero"
+  },
+  "headline": "Bokningssystem som förenklar din vardag",
+  "description": "Effektivisera din verksamhet med vårt skräddarsydda bokningssystem. Spara tid, öka kundnöjdheten och få full kontroll över din kalender.",
+  "image": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg"
+}

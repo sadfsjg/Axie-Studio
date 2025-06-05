@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Axie Studio",
+  "image": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-NuqchLn54kB9iWfTXSPNMBColqGIom.jpeg",
+  "url": "https://www.axiestudio.se",
+  "telephone": "+46793436438",
+  "email": "support@jonkoping.site",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Norra Strandgatan",
+    "addressLocality": "Jönköping",
+    "addressRegion": "Jönköping",
+    "postalCode": "55320",
+    "addressCountry": "SE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "57.7826",
+    "longitude": "14.1618"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "priceRange": "$$",
+  "sameAs": ["https://www.facebook.com/profile.php?id=61573009403109", "https://www.instagram.com/accounts/edit/"],
+  "description": "Skräddarsydda bokningssystem och webbplatser för att effektivisera din verksamhet."
+}

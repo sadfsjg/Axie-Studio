@@ -1,0 +1,125 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Axie Studio",
+  "url": "https://www.axiestudio.se/en",
+  "description": "Customized booking systems and websites to streamline your business",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Organization",
+    "name": "Axie Studio",
+    "url": "https://www.axiestudio.se"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Axie Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg"
+    }
+  },
+  "mainEntity": {
+    "@type": "LocalBusiness",
+    "name": "Axie Studio",
+    "description": "Booking systems and websites for businesses",
+    "url": "https://www.axiestudio.se/en",
+    "telephone": "+46793436438",
+    "email": "support@jonkoping.site",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SE",
+      "addressRegion": "Sweden"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 57.7826,
+      "longitude": 14.1618
+    },
+    "areaServed": [
+      "Stockholm",
+      "Gothenburg",
+      "Malmö",
+      "Uppsala",
+      "Västerås",
+      "Örebro",
+      "Linköping",
+      "Helsingborg",
+      "Jönköping",
+      "Norrköping",
+      "Lund",
+      "Umeå",
+      "Gävle",
+      "Borås"
+    ],
+    "serviceType": [
+      "Booking Systems",
+      "Website Development",
+      "Mobile App Development",
+      "Digital Marketing",
+      "SEO Optimization"
+    ]
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Website",
+      "description": "Professional website for your business",
+      "price": "295",
+      "priceCurrency": "SEK",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "295",
+        "priceCurrency": "SEK",
+        "unitText": "per month"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Website + App",
+      "description": "Website with dedicated mobile app",
+      "price": "495",
+      "priceCurrency": "SEK",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "495",
+        "priceCurrency": "SEK",
+        "unitText": "per month"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Complete Solution",
+      "description": "Everything you need for your business",
+      "price": "995",
+      "priceCurrency": "SEK",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "995",
+        "priceCurrency": "SEK",
+        "unitText": "per month"
+      }
+    }
+  ],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.axiestudio.se/en/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "sameAs": [
+    "https://www.facebook.com/axiestudio",
+    "https://www.linkedin.com/company/axiestudio",
+    "https://twitter.com/axiestudio"
+  ],
+  "ai_metadata": {
+    "content_type": "business_website",
+    "primary_language": "en",
+    "alternate_language": "sv",
+    "business_type": "booking_system_provider",
+    "target_audience": "business_owners",
+    "services": ["booking_systems", "websites", "mobile_apps"],
+    "geographic_focus": "sweden",
+    "last_updated": "2025-01-27",
+    "crawl_priority": "high",
+    "content_freshness": "daily_updates"
+  }
+}

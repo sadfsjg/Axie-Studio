@@ -1,0 +1,178 @@
+# Industry-Leading Robots.txt Configuration for 2025
+# Optimized for AI Crawlers, Search Engines, and Cross-Browser Compatibility
+# Last updated: 2025-01-27
+
+# === GENERAL CRAWLING DIRECTIVES ===
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# === MAJOR SEARCH ENGINES ===
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+Request-rate: 1/1s
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+Request-rate: 1/2s
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# === AI AND ML CRAWLERS (2025 Updated) ===
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: ChatGPT-User
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: CCBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Claude-Web
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: ClaudeBot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Gemini
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Perplexity
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Mistral
+Allow: /
+Crawl-delay: 1
+
+User-agent: Llama-2
+Allow: /
+Crawl-delay: 1
+
+User-agent: Meta-ExternalAgent
+Allow: /
+Crawl-delay: 1
+
+User-agent: OpenAI-SearchBot
+Allow: /
+Crawl-delay: 0.5
+
+# === SOCIAL MEDIA CRAWLERS ===
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 1
+
+User-agent: TelegramBot
+Allow: /
+Crawl-delay: 1
+
+# === SPECIALIZED CRAWLERS ===
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Video
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-News
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: AdsBot-Google
+Allow: /
+Crawl-delay: 1
+
+# === ARCHIVE AND RESEARCH BOTS ===
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 2
+
+User-agent: archive.org_bot
+Allow: /
+Crawl-delay: 2
+
+# === EXPLICITLY ALLOWED PATHS FOR AI ===
+Allow: /sections/
+Allow: /en/
+Allow: /api/seo/
+Allow: /sitemap*.xml
+Allow: /*.json
+Allow: /schema/
+Allow: /structured-data/
+
+# === DISALLOWED PATHS ===
+Disallow: /api/private/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /temp/
+Disallow: /draft/
+Disallow: /.well-known/
+Disallow: /404
+Disallow: /500
+
+# === AI-FRIENDLY DATA ENDPOINTS ===
+Allow: /ai-data-structure.json
+Allow: /ai-data-structure-en.json
+Allow: /enhanced-schema.json
+Allow: /enhanced-schema-en.json
+Allow: /api/ai/content
+Allow: /api/ai/structure
+
+# === COMPREHENSIVE SITEMAP DECLARATIONS ===
+Sitemap: https://www.axiestudio.se/sitemap-index.xml
+Sitemap: https://www.axiestudio.se/sitemap.xml
+Sitemap: https://www.axiestudio.se/sitemap-sections.xml
+Sitemap: https://www.axiestudio.se/sitemap-ai.xml
+Sitemap: https://www.axiestudio.se/image-sitemap.xml
+Sitemap: https://www.axiestudio.se/video-sitemap.xml
+Sitemap: https://www.axiestudio.se/mobile-sitemap.xml
+Sitemap: https://www.axiestudio.se/hreflang-sitemap.xml
+
+# === HOST DIRECTIVE ===
+Host: https://www.axiestudio.se
+
+# === CACHE DIRECTIVES ===
+Cache-Control: max-age=86400, must-revalidate

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <url>
+    <loc>https://www.axiestudio.se/sections/features</loc>
+    <video:video>
+      <video:thumbnail_loc>https://www.axiestudio.se/videos/features-thumbnail.jpg</video:thumbnail_loc>
+      <video:title>Kraftfulla funktioner för bokningssystem</video:title>
+      <video:description>Upptäck våra kraftfulla funktioner som hjälper dig att optimera din verksamhet med anpassade bokningslänkar, varumärkesanpassat gränssnitt, och mer.</video:description>
+      <video:content_loc>https://www.axiestudio.se/videos/features-demo.mp4</video:content_loc>
+      <video:player_loc>https://www.axiestudio.se/video-player?id=features</video:player_loc>
+      <video:duration>180</video:duration>
+      <video:publication_date>2025-05-03T12:00:00+02:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:restriction relationship="allow">SE DK NO FI</video:restriction>
+      <video:platform relationship="allow">web mobile tv</video:platform>
+      <video:price currency="SEK">0</video:price>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:uploader info="https://www.axiestudio.se">Axie Studio</video:uploader>
+      <video:live>no</video:live>
+      <video:tag>bokningssystem</video:tag>
+      <video:tag>funktioner</video:tag>
+      <video:tag>anpassade bokningslänkar</video:tag>
+      <video:tag>automatiska påminnelser</video:tag>
+    </video:video>
+  </url>
+</urlset>

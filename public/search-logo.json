@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.axiestudio.se/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.axiestudio.se/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Axie Studio",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Axie%20Studio%2C%20make%20me%20a%20logo.%20this%20is%20the%20slogan_%20Build%2C%20Book%2C%20Automate_%20Your%20Digital%20Success%2C%20Simplified.%20Webdesign%2C%20A%20logo.jpg-Hm8a5L8HIWREt4rhLjkOSTmhTtoJNK.jpeg",
+      "width": 600,
+      "height": 600
+    }
+  }
+}

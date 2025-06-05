@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "features": "Features",
+    "appBenefits": "App Benefits", 
+    "mobileApps": "Mobile Apps",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "common": {
+    "appLogin": "App Login"
+  }
+}

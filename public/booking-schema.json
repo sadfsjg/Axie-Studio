@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.axiestudio.se/#booking-service",
+  "name": "Axie Studio Bokningssystem",
+  "description": "Boka en demonstration av vårt skräddarsydda bokningssystem som förenklar din vardag och effektiviserar din verksamhet.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Axie Studio",
+    "url": "https://www.axiestudio.se"
+  },
+  "serviceType": "Bokningsdemonstration",
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0QR3uRxVB7rb4ZHqJ1qYmz-T0e2CFtV5MYekvGDq1qyWxsV_Av3nP3zEGk0DrH2HqpTLoXuK0h",
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "Online",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SE"
+      }
+    }
+  },
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0QR3uRxVB7rb4ZHqJ1qYmz-T0e2CFtV5MYekvGDq1qyWxsV_Av3nP3zEGk0DrH2HqpTLoXuK0h",
+      "inLanguage": "sv-SE",
+      "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": "Bokningsdemonstration"
+    }
+  }
+}

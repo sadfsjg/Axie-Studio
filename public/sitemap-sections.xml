@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Hero Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/hero</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg</image:loc>
+      <image:title>Bokningssystem som förenklar din vardag</image:title>
+      <image:caption>Effektivisera din verksamhet med vårt skräddarsydda bokningssystem</image:caption>
+    </image:image>
+    <!-- Add alternate language versions -->
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/hero" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/hero" />
+    <!-- Add mobile version -->
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/hero" />
+  </url>
+
+  <!-- Features Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/features</loc>
+    <lastmod>2023-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg</image:loc>
+      <image:title>Kraftfulla funktioner för bokningssystem</image:title>
+      <image:caption>Upptäck våra kraftfulla funktioner som hjälper dig att optimera din verksamhet</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/features" />
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/features" />
+  </url>
+
+  <!-- App Benefits Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/app-benefits</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hq720.jpg-MfPWigKKVAqAKfhcIwZeDtYBdmjb3H.jpeg</image:loc>
+      <image:title>Fördelar med vår bokningsapp</image:title>
+      <image:caption>Med vårt bokningssystem får du en dedikerad app som förenklar din vardag</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/app-benefits" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/app-benefits" />
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/app-benefits" />
+  </url>
+
+    <!-- Admin App Section -->
+    <url>
+        <loc>https://www.axiestudio.se/sections/admin-app</loc>
+        <lastmod>2023-05-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+  <!-- Mobile Apps Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/mobile-apps</loc>
+    <lastmod>2023-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hq720.jpg-1yYwbjuXDIeQD7myqQFmwqBLFv6eug.jpeg</image:loc>
+      <image:title>Mobilappar för dina kunder</image:title>
+      <image:caption>Ge dina kunder en professionell bokningsupplevelse med en skräddarsydd mobilapp</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/mobile-apps" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/mobile-apps" />
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/mobile-apps" />
+  </url>
+
+  <!-- CTA Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/cta</loc>
+    <lastmod>2024-05-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg</image:loc>
+      <image:title>Boka en kostnadsfri konsultation</image:title>
+      <image:caption>Låt oss diskutera hur vårt bokningssystem kan anpassas för din verksamhet</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/cta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/cta" />
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/cta" />
+  </url>
+
+  <!-- Pricing Section -->
+  <url>
+    <loc>https://www.axiestudio.se/sections/pricing</loc>
+    <lastmod>2023-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://hebbkx1anhila5yf.public.blob.vercel-storage.com/axie-studio-logo.png-o0KJHjlQG9dIPQPW9CLptlYLWxjpsa.jpeg</image:loc>
+      <image:title>Priser för bokningssystem och webbplatser</image:title>
+      <image:caption>Skräddarsydda lösningar för alla typer av verksamheter</image:caption>
+    </image:image>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/pricing" />
+    <xhtml:link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.axiestudio.se/sections/pricing" />
+  </url>
+</urlset>

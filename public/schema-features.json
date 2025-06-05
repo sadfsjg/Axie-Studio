@@ -1,0 +1,57 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.axiestudio.se/#features"
+  },
+  "name": "Kraftfulla funktioner för bokningssystem",
+  "description": "Upptäck våra kraftfulla funktioner som hjälper dig att optimera din verksamhet med anpassade bokningslänkar, varumärkesanpassat gränssnitt, dynamiska tillgänglighetsinställningar och mer.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Service",
+        "name": "Anpassade bokningslänkar",
+        "description": "Personliga bokningslänkar som matchar ditt företags varumärke för smidig självbetjäningsschemaläggning."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Service",
+        "name": "Varumärkesanpassat gränssnitt",
+        "description": "Kalenderns bokningsportal är helt anpassningsbar med företagets logotyp, färger och meddelanden."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Service",
+        "name": "Dynamiska tillgänglighetsinställningar",
+        "description": "Ställ in specifika arbetstider, bufferttider och möteslängder för att säkerställa korrekt schemaläggning."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Service",
+        "name": "Automatiska påminnelser",
+        "description": "Skickar påminnelser via SMS, e-post eller notiser, anpassade med företagets varumärke och mötesdetaljer."
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Service",
+        "name": "Betalningsintegrationer",
+        "description": "Säker betalningshantering som låter dig ta emot depositioner eller fullständiga betalningar vid bokning."
+      }
+    }
+  ]
+}

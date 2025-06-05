@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main sitemap with all pages -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/sitemap.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Dedicated sections sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/sitemap-sections.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Blog content sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/sitemap-blog.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- News content sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/sitemap-news.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Image sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/image-sitemap.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Video sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/video-sitemap.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Mobile sitemap -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/mobile-sitemap.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+  
+  <!-- Hreflang sitemap for internationalization -->
+  <sitemap>
+    <loc>https://www.axiestudio.se/hreflang-sitemap.xml</loc>
+    <lastmod>2025-05-03</lastmod>
+  </sitemap>
+</sitemapindex>

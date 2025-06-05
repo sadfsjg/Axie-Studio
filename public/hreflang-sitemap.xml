@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.axiestudio.se/</loc>
+    <lastmod>2025-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.axiestudio.se/en/"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://www.axiestudio.se/da/"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://www.axiestudio.se/no/"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://www.axiestudio.se/fi/"/>
+    <xhtml:link rel="alternate"  hreflang="fi" href="https://www.axiestudio.se/fi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/"/>
+  </url>
+  
+  <url>
+    <loc>https://www.axiestudio.se/sections/hero</loc>
+    <lastmod>2025-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/hero"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.axiestudio.se/en/sections/hero"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://www.axiestudio.se/da/sections/hero"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://www.axiestudio.se/no/sections/hero"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://www.axiestudio.se/fi/sections/hero"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/hero"/>
+  </url>
+  
+  <url>
+    <loc>https://www.axiestudio.se/sections/features</loc>
+    <lastmod>2025-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/features"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.axiestudio.se/en/sections/features"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://www.axiestudio.se/da/sections/features"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://www.axiestudio.se/no/sections/features"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://www.axiestudio.se/fi/sections/features"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/features"/>
+  </url>
+  
+  <url>
+    <loc>https://www.axiestudio.se/sections/comparison</loc>
+    <lastmod>2025-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://www.axiestudio.se/sections/comparison"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.axiestudio.se/en/sections/comparison"/>
+    <xhtml:link rel="alternate" hreflang="da" href="https://www.axiestudio.se/da/sections/comparison"/>
+    <xhtml:link rel="alternate" hreflang="no" href="https://www.axiestudio.se/no/sections/comparison"/>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://www.axiestudio.se/fi/sections/comparison"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.axiestudio.se/sections/comparison"/>
+  </url>
+</urlset>

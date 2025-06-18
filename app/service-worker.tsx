@@ -7,6 +7,16 @@ export function ServiceWorkerRegistration() {
   const pathname = usePathname()
   
   useEffect(() => {
+    // Check if we're in StackBlitz environment
+    const isStackBlitz = typeof window !== 'undefined' && 
+      (window.location.hostname.includes('stackblitz') || 
+       window.location.hostname.includes('webcontainer'))
+    
+    if (isStackBlitz) {
+      console.log("Service Worker registration skipped: Running in StackBlitz environment")
+      return
+    }
+    
     if ("serviceWorker" in navigator) {
       // Register service worker
       window.addEventListener("load", () => {
@@ -25,7 +35,8 @@ export function ServiceWorkerRegistration() {
             }, 60 * 60 * 1000) // Check every hour
           })
           .catch((error) => {
-            console.error("Service Worker registration failed:", error)
+            console.warn("Service Worker registration failed:", error.message)
+            // Don't throw error, just log it as a warning since this might be expected in some environments
           })
       })
       
@@ -46,6 +57,8 @@ export function ServiceWorkerRegistration() {
           }
         }
       })
+    } else {
+      console.log("Service Workers are not supported in this browser")
     }
   }, [pathname])
 

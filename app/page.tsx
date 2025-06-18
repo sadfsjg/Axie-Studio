@@ -13,6 +13,7 @@ import { DownloadAppSection } from "@/components/sections/download-app-section"
 import { ScrollToTop } from "@/components/ui/scroll-to-top"
 import { GoogleCalendarPopup } from "@/components/google-calendar-popup"
 import { PerformanceOptimizer } from "@/components/performance-optimizer"
+import { DirectPwaInstall } from "@/components/direct-pwa-install"
 import Script from "next/script"
 
 // Define the features data
@@ -218,6 +219,7 @@ export default function HomePage() {
 
       <SiteFooter />
       <ScrollToTop />
+      <DirectPwaInstall />
 
       {/* Google Calendar Popup */}
       <GoogleCalendarPopup isOpen={isDialogOpen} onClose={handleCloseDialog} />

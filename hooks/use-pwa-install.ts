@@ -1,168 +1,88 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { isIOS, isAndroid, isChrome, isSafari, isStandalone } from "@/utils/device-detection"
-import { usePwaInstall as useContextPwaInstall } from "@/components/pwa/install-context"
+
+type BeforeInstallPromptEvent = Event & {
+  prompt: () => Promise<void>
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>
+}
 
 export function usePwaInstall() {
-  const context = useContextPwaInstall()
-  const [hasCheckedStorage, setHasCheckedStorage] = useState(false)
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
+  const [isInstalled, setIsInstalled] = useState(false)
+  const [installInstructions, setInstallInstructions] = useState<"ios" | "android" | "chrome" | "other" | null>(null)
 
-  // Check if the app is already installed via localStorage
+  // Detect if app can be installed
   useEffect(() => {
-    if (typeof window !== "undefined" && !hasCheckedStorage) {
-      const isAppInstalled = localStorage.getItem("pwa-installed") === "true" || isStandalone()
-
-      if (isAppInstalled && context) {
-        context.isInstalled = true
-      }
-
-      setHasCheckedStorage(true)
+    // Check if already installed
+    if (
+      window.matchMedia("(display-mode: standalone)").matches ||
+      (window.navigator as any).standalone === true ||
+      localStorage.getItem("pwa-installed") === "true"
+    ) {
+      setIsInstalled(true)
+      return
     }
-  }, [context, hasCheckedStorage])
 
-  // Enhanced canInstall check
-  const canInstall = (): boolean => {
-    // Already installed
-    if (context?.isInstalled || isStandalone()) return false
+    // Determine device type for installation instructions
+    if (isIOS() && isSafari()) {
+      setInstallInstructions("ios")
+    } else if (isAndroid() && isChrome()) {
+      setInstallInstructions("android")
+    } else if (isChrome()) {
+      setInstallInstructions("chrome")
+    } else {
+      setInstallInstructions("other")
+    }
 
-    // Has native install prompt
-    if (context?.canInstall) return true
+    // Listen for beforeinstallprompt event
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault()
+      setDeferredPrompt(e as BeforeInstallPromptEvent)
+    }
 
-    // iOS Safari can install PWAs
-    if (isIOS() && isSafari()) return true
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
 
-    // Android browsers
-    if (isAndroid()) return true
+    // Listen for appinstalled event
+    const handleAppInstalled = () => {
+      setIsInstalled(true)
+      localStorage.setItem("pwa-installed", "true")
+    }
 
-    // Desktop Chrome/Edge
-    if (isChrome() || navigator.userAgent.includes("Edg")) return true
+    window.addEventListener("appinstalled", handleAppInstalled)
 
-    return false
-  }
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
+      window.removeEventListener("appinstalled", handleAppInstalled)
+    }
+  }, [])
 
-  // Enhanced promptInstall with better error handling and events
+  // Function to prompt installation
   const promptInstall = async (): Promise<boolean> => {
-    try {
-      if (context?.promptInstall) {
-        await context.promptInstall()
-        // Listen for appinstalled event
-        return new Promise((resolve) => {
-          window.addEventListener('appinstalled', () => {
-            localStorage.setItem("pwa-installed", "true")
-            resolve(true)
-          }, { once: true })
-        })
-      } else {
-        // Fallback for when context is not available
-        if (isIOS() && isSafari()) {
-          // Show iOS installation modal with icons
-          return showInstallModal({
-            title: "Installera Axie Studio",
-            steps: [
-              {
-                text: "Tryck på Dela-knappen",
-                icon: "share"
-              },
-              {
-                text: "Välj 'Lägg till på hemskärmen'",
-                icon: "add_to_home_screen"
-              }
-            ],
-            icon: "/apple-icon.png"
-          })
-        } else if (isAndroid()) {
-          // Show Android installation modal
-          return showInstallModal({
-            title: "Installera Axie Studio",
-            steps: [
-              {
-                text: "Tryck på menyn (⋮)",
-                icon: "more_vert"
-              },
-              {
-                text: "Välj 'Installera app'",
-                icon: "install_desktop"
-              }
-            ],
-            icon: "/icon.png"
-          })
-        } else {
-          // Show generic installation modal
-          return showInstallModal({
-            title: "Installera Axie Studio",
-            steps: [
-              {
-                text: "Leta efter install-ikonen",
-                icon: "download"
-              },
-              {
-                text: "Klicka på 'Installera'",
-                icon: "install_mobile"
-              }
-            ],
-            icon: "/logo192.png"
-          })
+    if (deferredPrompt) {
+      try {
+        await deferredPrompt.prompt()
+        const { outcome } = await deferredPrompt.userChoice
+        
+        if (outcome === "accepted") {
+          setDeferredPrompt(null)
+          setIsInstalled(true)
+          localStorage.setItem("pwa-installed", "true")
+          return true
         }
-      }
-    } catch (error) {
-      console.error("PWA installation failed:", error)
-      // Show fallback instructions
-      // Same improved modal for error case
-      if (isIOS() && isSafari()) {
-        return showInstallModal({
-          title: "Installera Axie Studio",
-          steps: [
-            {
-              text: "Tryck på Dela-knappen",
-              icon: "share"
-            },
-            {
-              text: "Välj 'Lägg till på hemskärmen'",
-              icon: "add_to_home_screen"
-            }
-          ],
-          icon: "/apple-icon.png"
-        })
-      } else if (isAndroid()) {
-        return showInstallModal({
-          title: "Installera Axie Studio",
-          steps: [
-            {
-              text: "Tryck på menyn (⋮)",
-              icon: "more_vert"
-            },
-            {
-              text: "Välj 'Installera app'",
-              icon: "install_desktop"
-            }
-          ],
-          icon: "/icon.png"
-        })
-      } else {
-        return showInstallModal({
-          title: "Installera Axie Studio",
-          steps: [
-            {
-              text: "Leta efter install-ikonen",
-              icon: "download"
-            },
-            {
-              text: "Klicka på 'Installera'",
-              icon: "install_mobile"
-            }
-          ],
-          icon: "/logo192.png"
-        })
+      } catch (error) {
+        console.error("Error during installation prompt:", error)
       }
     }
+    
     return false
   }
 
-  // Return the context with enhanced functionality
   return {
-    ...context,
-    canInstall: canInstall(),
+    canInstall: !!deferredPrompt || (isIOS() && isSafari()) || isAndroid() || isChrome(),
+    isInstalled,
     promptInstall,
+    installInstructions
   }
 }

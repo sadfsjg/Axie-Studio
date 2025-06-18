@@ -13,6 +13,7 @@ import { DownloadAppSectionEn } from "@/components/sections/en/download-app-sect
 import { GoogleCalendarPopup } from "@/components/google-calendar-popup"
 import { ScrollToTop } from "@/components/ui/scroll-to-top"
 import { PerformanceOptimizer } from "@/components/performance-optimizer"
+import { DirectPwaInstall } from "@/components/en/direct-pwa-install"
 import Script from "next/script"
 
 export default function EnglishHome() {
@@ -178,6 +179,7 @@ export default function EnglishHome() {
       </main>
       <SiteFooter />
       <ScrollToTop />
+      <DirectPwaInstall />
       {showCalendarPopup && <GoogleCalendarPopup onClose={() => setShowCalendarPopup(false)} />}
     </div>
   )

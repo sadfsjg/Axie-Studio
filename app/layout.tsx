@@ -4,6 +4,8 @@ import type React from "react"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n/provider"
 import { ServiceWorkerRegistration } from "@/app/service-worker"
+import { PwaInstallDetector } from "@/components/pwa-install-detector"
+import { ThemeProvider } from "@/components/theme-provider"
 
 export default function RootLayout({
   children,
@@ -12,11 +14,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <meta name="theme-color" content="#0c8de0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Axie Studio" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Axie Studio" />
+      </head>
       <body>
-        <I18nProvider>
-          {children}
-          <ServiceWorkerRegistration />
-        </I18nProvider>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <I18nProvider>
+            {children}
+            <ServiceWorkerRegistration />
+            <PwaInstallDetector />
+          </I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -6,7 +6,7 @@ import { X, Download, CheckCircle } from "lucide-react"
 import Image from "next/image"
 
 export function DirectPwaInstall() {
-  const { canInstall, promptInstall, isInstalled } = usePwaInstall()
+  const { canInstall, promptInstall, isInstalled, installInstructions } = usePwaInstall()
   const [showInstallPopup, setShowInstallPopup] = useState(false)
   const [showFloatingButton, setShowFloatingButton] = useState(false)
   const [hasAutoPrompted, setHasAutoPrompted] = useState(false)
@@ -27,7 +27,7 @@ export function DirectPwaInstall() {
       const timer = setTimeout(() => {
         setShowInstallPopup(true)
         setHasAutoPrompted(true)
-      }, 1000)
+      }, 3000)
       return () => clearTimeout(timer)
     }
   }, [canInstall, isInstalled, hasAutoPrompted])
@@ -39,7 +39,7 @@ export function DirectPwaInstall() {
     <>
       {/* Floating install button */}
       {showFloatingButton && (
-        <div className="fixed bottom-6 right-6 z-40 flex animate-fade-in items-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg transition-all hover:bg-blue-700">
+        <div className="fixed bottom-6 right-6 z-40 flex animate-fadeIn items-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg transition-all hover:bg-blue-700">
           <button onClick={() => setShowInstallPopup(true)} className="flex items-center gap-2 text-sm font-medium">
             <Download className="h-4 w-4" />
             Install app

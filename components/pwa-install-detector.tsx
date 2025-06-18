@@ -5,7 +5,7 @@ import { usePwaInstall } from "@/hooks/use-pwa-install"
 import { isIOS, isAndroid, isChrome, isSafari } from "@/utils/device-detection"
 
 export function PwaInstallDetector() {
-  const { canInstall, isInstalled, showInstallPrompt } = usePwaInstall()
+  const { canInstall, isInstalled, promptInstall } = usePwaInstall()
 
   useEffect(() => {
     // Only run on client
@@ -29,15 +29,15 @@ export function PwaInstallDetector() {
       if (document.visibilityState === "visible" && canInstall) {
         // For iOS Safari, show popup
         if (isIOS() && isSafari()) {
-          showInstallPrompt("popup")
+          showInstallInstructions("ios")
         }
         // For Android Chrome, show banner
         else if (isAndroid() && isChrome()) {
-          showInstallPrompt("banner")
+          showInstallInstructions("android")
         }
         // For desktop Chrome, show button
         else if (isChrome()) {
-          showInstallPrompt("button")
+          showInstallInstructions("chrome")
         }
 
         // Record that we've shown the prompt
@@ -48,18 +48,25 @@ export function PwaInstallDetector() {
       }
     }
 
+    // Function to show install instructions based on device
+    const showInstallInstructions = (device: string) => {
+      // This could trigger a modal or banner with instructions
+      const event = new CustomEvent("showPwaInstall", { detail: { device } })
+      window.dispatchEvent(event)
+    }
+
     // Set a timeout to check after 30 seconds
     const timer = setTimeout(() => {
       detectInstallOpportunity()
       // Also listen for visibility changes (user comes back to the tab)
       document.addEventListener("visibilitychange", detectInstallOpportunity)
-    }, 120000)
+    }, 30000)
 
     return () => {
       clearTimeout(timer)
       document.removeEventListener("visibilitychange", detectInstallOpportunity)
     }
-  }, [canInstall, isInstalled, showInstallPrompt])
+  }, [canInstall, isInstalled, promptInstall])
 
   // This component doesn't render anything visible
   return null

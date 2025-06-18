@@ -80,5 +80,22 @@
   "prefer_related_applications": false,
   "categories": ["business", "productivity", "utilities"],
   "lang": "en-US",
-  "dir": "ltr"
+  "dir": "ltr",
+  "scope": "/en",
+  "id": "se.axiestudio.app.en",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "handle_links": "preferred",
+  "file_handlers": [
+    {
+      "action": "/en/open-file",
+      "accept": {
+        "application/json": [".booking"]
+      }
+    }
+  ]
 }

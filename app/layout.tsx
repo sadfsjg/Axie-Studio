@@ -1,6 +1,5 @@
 import "./globals.css"
-import { I18nProvider } from "@/lib/i18n/provider"
-import { ThemeProvider } from "@/components/theme-provider"
+import { inter, montserrat } from "./fonts"
 
 export default function RootLayout({
   children,
@@ -8,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="sv" className={`${inter.variable} ${montserrat.variable}`}>
       <head>
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
@@ -18,13 +17,14 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Axie Studio" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="application-name" content="Axie Studio" />
+        <meta name="msapplication-TileColor" content="#0c8de0" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-navbutton-color" content="#0c8de0" />
+        <meta name="msapplication-starturl" content="/" />
+        <meta name="format-detection" content="telephone=no" />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-          <I18nProvider>
-            {children}
-          </I18nProvider>
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   )

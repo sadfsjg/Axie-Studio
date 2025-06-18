@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Offline | Axie Studio</title>
   <link rel="icon" href="/favicon.ico">
+  <meta name="theme-color" content="#0c8de0">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -51,6 +52,8 @@
       text-decoration: none;
       font-weight: 500;
       transition: background-color 0.2s;
+      border: none;
+      cursor: pointer;
     }
     .button:hover {
       background-color: #0b7bc7;
@@ -58,6 +61,22 @@
     .offline-icon {
       font-size: 64px;
       margin-bottom: 16px;
+    }
+    .hidden {
+      display: none;
+    }
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+      margin-left: 8px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -67,19 +86,100 @@
     <h1>Du är offline</h1>
     <p>Det verkar som att du inte har någon internetanslutning just nu. Kontrollera din anslutning och försök igen.</p>
     <p>Axie Studio-appen fungerar bäst med en aktiv internetanslutning för att visa aktuell information och funktioner.</p>
-    <a href="/" class="button">Försök igen</a>
+    <button id="retry-button" class="button">Försök igen <span id="loading-indicator" class="loading hidden"></span></button>
+    
+    <div id="cached-content" class="hidden" style="margin-top: 32px; text-align: left;">
+      <h2 style="font-size: 20px; margin-bottom: 16px; color: #0c8de0;">Tillgängligt innehåll offline:</h2>
+      <ul id="cached-pages" style="list-style-type: none; padding: 0;">
+        <!-- Will be populated by JavaScript -->
+      </ul>
+    </div>
   </div>
+  
   <script>
     // Check for network status changes
     window.addEventListener('online', () => {
       window.location.href = '/';
     });
     
-    // Reload button functionality
-    document.querySelector('.button').addEventListener('click', (e) => {
+    // Retry button functionality
+    const retryButton = document.getElementById('retry-button');
+    const loadingIndicator = document.getElementById('loading-indicator');
+    
+    retryButton.addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = '/';
+      loadingIndicator.classList.remove('hidden');
+      
+      // Try to fetch the homepage
+      fetch('/')
+        .then(response => {
+          if (response.ok) {
+            window.location.href = '/';
+          } else {
+            throw new Error('Network response was not ok');
+          }
+        })
+        .catch(error => {
+          console.error('Failed to reconnect:', error);
+          loadingIndicator.classList.add('hidden');
+          
+          // Show cached content if available
+          showCachedContent();
+        });
     });
+    
+    // Function to show cached content
+    async function showCachedContent() {
+      try {
+        const cache = await caches.open('axie-studio-v2');
+        const cachedRequests = await cache.keys();
+        const cachedPages = cachedRequests.filter(request => 
+          request.url.endsWith('.html') || 
+          request.url.endsWith('/') || 
+          !request.url.includes('.')
+        );
+        
+        if (cachedPages.length > 0) {
+          const cachedContentElement = document.getElementById('cached-content');
+          const cachedPagesElement = document.getElementById('cached-pages');
+          
+          cachedContentElement.classList.remove('hidden');
+          
+          cachedPages.forEach(request => {
+            const url = new URL(request.url);
+            const path = url.pathname;
+            
+            // Skip service worker and offline page
+            if (path.includes('service-worker') || path.includes('offline')) {
+              return;
+            }
+            
+            const listItem = document.createElement('li');
+            listItem.style.margin = '8px 0';
+            
+            const link = document.createElement('a');
+            link.href = path;
+            link.textContent = path === '/' ? 'Startsida' : path;
+            link.style.color = '#0c8de0';
+            link.style.textDecoration = 'none';
+            link.style.display = 'block';
+            link.style.padding = '8px 12px';
+            link.style.borderRadius = '4px';
+            link.style.backgroundColor = '#f0f9ff';
+            
+            listItem.appendChild(link);
+            cachedPagesElement.appendChild(listItem);
+          });
+        }
+      } catch (error) {
+        console.error('Error showing cached content:', error);
+      }
+    }
+    
+    // Check for cached content on page load
+    if ('caches' in window) {
+      showCachedContent();
+    }
   </script>
 </body>
 </html>

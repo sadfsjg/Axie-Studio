@@ -10,6 +10,8 @@ export function DirectPwaInstall() {
   const [showInstallPopup, setShowInstallPopup] = useState(false)
   const [showFloatingButton, setShowFloatingButton] = useState(false)
   const [hasAutoPrompted, setHasAutoPrompted] = useState(false)
+  const [installSuccess, setInstallSuccess] = useState(false)
+  const [installAttempted, setInstallAttempted] = useState(false)
 
   useEffect(() => {
     // Show floating button after 1.5 seconds if the app can be installed
@@ -35,10 +37,22 @@ export function DirectPwaInstall() {
   // Don't show anything if already installed
   if (isInstalled) return null
 
+  const handleInstallClick = async () => {
+    setInstallAttempted(true)
+    const success = await promptInstall()
+    
+    if (success) {
+      setInstallSuccess(true)
+      setTimeout(() => {
+        setShowInstallPopup(false)
+      }, 1000)
+    }
+  }
+
   return (
     <>
       {/* Floating install button */}
-      {showFloatingButton && (
+      {showFloatingButton && !installSuccess && (
         <div className="fixed bottom-6 right-6 z-40 flex animate-fadeIn items-center gap-2 rounded-full bg-blue-600 px-4 py-3 text-white shadow-lg transition-all hover:bg-blue-700">
           <button onClick={() => setShowInstallPopup(true)} className="flex items-center gap-2 text-sm font-medium">
             <Download className="h-4 w-4" />
@@ -109,25 +123,56 @@ export function DirectPwaInstall() {
                 </div>
               </div>
 
-              {/* Simplify the Benefits section to just one key point */}
+              {/* Benefits section */}
               <div className="mb-4 space-y-2">
                 <div className="flex items-start gap-2">
                   <CheckCircle className="mt-0.5 h-5 w-5 text-green-500" />
                   <p className="text-sm text-gray-700">Snabbare åtkomst till bokningssystemet</p>
                 </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-5 w-5 text-green-500" />
+                  <p className="text-sm text-gray-700">Fungerar även offline</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-5 w-5 text-green-500" />
+                  <p className="text-sm text-gray-700">Direktåtkomst från hemskärmen</p>
+                </div>
               </div>
 
               {/* Install button - make it more prominent */}
               <button
-                onClick={() => {
-                  promptInstall()
-                  // Close popup after triggering install to make it feel faster
-                  setTimeout(() => setShowInstallPopup(false), 500)
-                }}
-                className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-4 text-lg font-bold text-white transition hover:bg-blue-700"
+                onClick={handleInstallClick}
+                disabled={installSuccess}
+                className={`mt-2 flex w-full items-center justify-center gap-2 rounded-lg ${
+                  installSuccess ? "bg-green-600" : "bg-blue-600 hover:bg-blue-700"
+                } px-4 py-4 text-lg font-bold text-white transition`}
               >
-                Installera nu
+                {installSuccess ? (
+                  <>
+                    <CheckCircle className="h-5 w-5" />
+                    Installerad!
+                  </>
+                ) : installAttempted && installInstructions === "ios" ? (
+                  "Följ instruktionerna ovan"
+                ) : (
+                  <>
+                    <Download className="h-5 w-5" />
+                    Installera nu
+                  </>
+                )}
               </button>
+
+              {/* iOS specific instructions */}
+              {installInstructions === "ios" && installAttempted && (
+                <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4">
+                  <h4 className="mb-2 font-medium text-blue-800">För att installera på iOS:</h4>
+                  <ol className="ml-5 list-decimal space-y-2 text-sm text-blue-700">
+                    <li>Tryck på <span className="inline-flex items-center rounded bg-gray-200 px-1">Dela <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.68 13.313a.75.75 0 0 0 0 1.06.74.74 0 0 0 1.06 0l2.25-2.25a.75.75 0 0 0 0-1.06l-2.25-2.25a.75.75 0 1 0-1.06 1.06l.97.97H3.75a.75.75 0 0 0 0 1.5h5.94l-.97.97Z" fill="currentColor"/><path d="M12.75 3.75a.75.75 0 0 0-1.5 0v.75c0 .414.336.75.75.75h7.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 0-.75.75v.75a.75.75 0 0 0 1.5 0 .75.75 0 0 0 .75-.75h7.5A2.25 2.25 0 0 0 21 18v-12a2.25 2.25 0 0 0-2.25-2.25h-6Z" fill="currentColor"/></svg></span> ikonen i Safari</li>
+                    <li>Scrolla ner och tryck på <strong>Lägg till på hemskärmen</strong></li>
+                    <li>Tryck på <strong>Lägg till</strong> i övre högra hörnet</li>
+                  </ol>
+                </div>
+              )}
 
               {/* Trust badge */}
               <div className="mt-4 flex items-center justify-center gap-1 text-xs text-gray-500">

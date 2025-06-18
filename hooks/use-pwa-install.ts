@@ -12,9 +12,13 @@ export function usePwaInstall() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
   const [isInstalled, setIsInstalled] = useState(false)
   const [installInstructions, setInstallInstructions] = useState<"ios" | "android" | "chrome" | "other" | null>(null)
+  const [installPromptVisible, setInstallPromptVisible] = useState(false)
 
   // Detect if app can be installed
   useEffect(() => {
+    // Only run on client side
+    if (typeof window === 'undefined') return
+    
     // Check if already installed
     if (
       window.matchMedia("(display-mode: standalone)").matches ||
@@ -52,9 +56,17 @@ export function usePwaInstall() {
 
     window.addEventListener("appinstalled", handleAppInstalled)
 
+    // Listen for custom showPwaInstall event
+    const handleShowInstall = (e: CustomEvent) => {
+      setInstallPromptVisible(true)
+    }
+
+    window.addEventListener("showPwaInstall", handleShowInstall as EventListener)
+
     return () => {
       window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
       window.removeEventListener("appinstalled", handleAppInstalled)
+      window.removeEventListener("showPwaInstall", handleShowInstall as EventListener)
     }
   }, [])
 
@@ -76,13 +88,28 @@ export function usePwaInstall() {
       }
     }
     
+    // If we can't use the native prompt, show our custom UI
+    setInstallPromptVisible(true)
     return false
+  }
+
+  // Function to hide the install prompt
+  const hideInstallPrompt = () => {
+    setInstallPromptVisible(false)
+  }
+
+  // Function to show the install prompt
+  const showInstallPrompt = (type: "popup" | "banner" | "button" = "popup") => {
+    setInstallPromptVisible(true)
   }
 
   return {
     canInstall: !!deferredPrompt || (isIOS() && isSafari()) || isAndroid() || isChrome(),
     isInstalled,
     promptInstall,
-    installInstructions
+    installInstructions,
+    showInstallPrompt,
+    hideInstallPrompt,
+    installPromptVisible
   }
 }

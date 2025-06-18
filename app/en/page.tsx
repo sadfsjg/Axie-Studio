@@ -15,6 +15,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top"
 import { PerformanceOptimizer } from "@/components/performance-optimizer"
 import { DirectPwaInstall } from "@/components/en/direct-pwa-install"
 import Script from "next/script"
+import ClientLayout from "../client-layout"
 
 export default function EnglishHome() {
   const [showCalendarPopup, setShowCalendarPopup] = useState(false)
@@ -158,29 +159,31 @@ export default function EnglishHome() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <PerformanceOptimizer />
+    <ClientLayout>
+      <div className="flex min-h-screen flex-col">
+        <PerformanceOptimizer />
 
-      <Script
-        id="main-structured-data-en"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+        <Script
+          id="main-structured-data-en"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
-      <ModernHeader />
-      <main className="flex-1">
-        <HeroSectionEnNoI18n onDemoClick={handleDemoClick} onExploreClick={handleExploreClick} />
-        <FeaturesSection features={features} onDemoClick={handleDemoClick} />
-        <AppBenefitsSectionEn />
-        <AdminAppSectionEn />
-        <MobileAppsSectionEn />
-        <PricingSectionEn plans={pricingPlans} onContactClick={handleDemoClick} />
-        <DownloadAppSectionEn />
-      </main>
-      <SiteFooter />
-      <ScrollToTop />
-      <DirectPwaInstall />
-      {showCalendarPopup && <GoogleCalendarPopup onClose={() => setShowCalendarPopup(false)} />}
-    </div>
+        <ModernHeader />
+        <main className="flex-1">
+          <HeroSectionEnNoI18n onDemoClick={handleDemoClick} onExploreClick={handleExploreClick} />
+          <FeaturesSection features={features} onDemoClick={handleDemoClick} />
+          <AppBenefitsSectionEn />
+          <AdminAppSectionEn />
+          <MobileAppsSectionEn />
+          <PricingSectionEn plans={pricingPlans} onContactClick={handleDemoClick} />
+          <DownloadAppSectionEn />
+        </main>
+        <SiteFooter />
+        <ScrollToTop />
+        <DirectPwaInstall />
+        {showCalendarPopup && <GoogleCalendarPopup onClose={() => setShowCalendarPopup(false)} />}
+      </div>
+    </ClientLayout>
   )
 }

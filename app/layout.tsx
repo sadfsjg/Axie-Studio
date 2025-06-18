@@ -1,10 +1,5 @@
-"use client"
-
-import type React from "react"
 import "./globals.css"
 import { I18nProvider } from "@/lib/i18n/provider"
-import { ServiceWorkerRegistration } from "@/app/service-worker"
-import { PwaInstallDetector } from "@/components/pwa-install-detector"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export default function RootLayout({
@@ -28,8 +23,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <I18nProvider>
             {children}
-            <ServiceWorkerRegistration />
-            <PwaInstallDetector />
           </I18nProvider>
         </ThemeProvider>
       </body>

@@ -15,6 +15,7 @@ import { GoogleCalendarPopup } from "@/components/google-calendar-popup"
 import { PerformanceOptimizer } from "@/components/performance-optimizer"
 import { DirectPwaInstall } from "@/components/direct-pwa-install"
 import Script from "next/script"
+import ClientLayout from "./client-layout"
 
 // Define the features data
 const features = [
@@ -196,33 +197,35 @@ export default function HomePage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <PerformanceOptimizer />
+    <ClientLayout>
+      <div className="flex flex-col min-h-screen">
+        <PerformanceOptimizer />
 
-      <Script
-        id="main-structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+        <Script
+          id="main-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
 
-      <ModernHeader />
+        <ModernHeader />
 
-      <main className="flex-1">
-        <HeroSectionNoI18n onDemoClick={handleBookConsultation} onExploreClick={handleExploreClick} />
-        <FeaturesSectionNoI18n features={features} onDemoClick={handleBookConsultation} />
-        <AppBenefitsSection onDemoClick={handleBookConsultation} />
-        <AdminAppSection />
-        <MobileAppsSectionNoI18n onDemoClick={handleBookConsultation} />
-        <PricingSection plans={pricingPlans} onContactClick={handleBookConsultation} />
-        <DownloadAppSection />
-      </main>
+        <main className="flex-1">
+          <HeroSectionNoI18n onDemoClick={handleBookConsultation} onExploreClick={handleExploreClick} />
+          <FeaturesSectionNoI18n features={features} onDemoClick={handleBookConsultation} />
+          <AppBenefitsSection onDemoClick={handleBookConsultation} />
+          <AdminAppSection />
+          <MobileAppsSectionNoI18n onDemoClick={handleBookConsultation} />
+          <PricingSection plans={pricingPlans} onContactClick={handleBookConsultation} />
+          <DownloadAppSection />
+        </main>
 
-      <SiteFooter />
-      <ScrollToTop />
-      <DirectPwaInstall />
+        <SiteFooter />
+        <ScrollToTop />
+        <DirectPwaInstall />
 
-      {/* Google Calendar Popup */}
-      <GoogleCalendarPopup isOpen={isDialogOpen} onClose={handleCloseDialog} />
-    </div>
+        {/* Google Calendar Popup */}
+        <GoogleCalendarPopup isOpen={isDialogOpen} onClose={handleCloseDialog} />
+      </div>
+    </ClientLayout>
   )
 }

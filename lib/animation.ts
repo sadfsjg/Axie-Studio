@@ -20,6 +20,16 @@ export const fadeIn = (direction: string, delay: number): Variants => {
         delay,
       },
     },
+    visible: {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.25,
+        delay,
+      },
+    },
   }
 }
 
@@ -42,6 +52,17 @@ export const slideIn = (direction: string, type: string, delay: number, duration
         ease: "easeOut",
       },
     },
+    visible: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        type,
+        delay,
+        duration,
+        ease: "easeOut",
+      },
+    },
   }
 }
 
@@ -51,6 +72,18 @@ export const slideInFromLeft = (delay = 0, duration = 0.5): Variants => {
     hidden: {
       x: "-100%",
       opacity: 0,
+    },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        delay,
+        duration,
+        ease: "easeOut",
+      },
     },
     visible: {
       x: 0,
@@ -74,6 +107,18 @@ export const slideInFromRight = (delay = 0, duration = 0.5): Variants => {
       x: "100%",
       opacity: 0,
     },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        delay,
+        duration,
+        ease: "easeOut",
+      },
+    },
     visible: {
       x: 0,
       opacity: 1,
@@ -96,6 +141,18 @@ export const slideInFromTop = (delay = 0, duration = 0.5): Variants => {
       y: "-100%",
       opacity: 0,
     },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        delay,
+        duration,
+        ease: "easeOut",
+      },
+    },
     visible: {
       y: 0,
       opacity: 1,
@@ -117,6 +174,18 @@ export const slideInFromBottom = (delay = 0, duration = 0.5): Variants => {
     hidden: {
       y: "100%",
       opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+        delay,
+        duration,
+        ease: "easeOut",
+      },
     },
     visible: {
       y: 0,
@@ -143,6 +212,12 @@ export const staggerContainer = (staggerChildren: number, delayChildren: number)
         delayChildren,
       },
     },
+    visible: {
+      transition: {
+        staggerChildren,
+        delayChildren,
+      },
+    },
   }
 }
 
@@ -163,6 +238,16 @@ export const zoomIn = (delay: number, duration: number): Variants => {
         ease: "easeOut",
       },
     },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "tween",
+        delay,
+        duration,
+        ease: "easeOut",
+      },
+    },
   }
 }
 
@@ -174,6 +259,15 @@ export const textVariant = (delay: number): Variants => {
       opacity: 0,
     },
     show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 1.25,
+        delay,
+      },
+    },
+    visible: {
       y: 0,
       opacity: 1,
       transition: {

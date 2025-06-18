@@ -44,16 +44,16 @@ export function HeroSectionNoI18n({ onDemoClick, onExploreClick }: HeroSectionNo
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      {/* Decorative elements */}
+      {/* Enhanced decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Gradient orbs */}
+        {/* Gradient orbs with improved animation */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl transform animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl transform animate-float-delayed"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl transform animate-float animation-delay-2000"></div>
+        
+        {/* Enhanced grid pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#3b82f610_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
 
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-grid-slate/[0.04] bg-[length:50px_50px] opacity-40"></div>
-
-        {/* Radial gradient */}
+        {/* Improved radial gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08),transparent_70%)]"></div>
       </div>
 
@@ -126,7 +126,7 @@ export function HeroSectionNoI18n({ onDemoClick, onExploreClick }: HeroSectionNo
             animate="show"
             className="relative flex items-center justify-center mt-4 md:mt-0 optimize-gpu px-4 sm:px-0"
           >
-            {/* Decorative elements for the image grid */}
+            {/* Enhanced decorative elements for the image grid */}
             <motion.div
               variants={fadeIn("left", 0.2)}
               initial="hidden"
@@ -191,7 +191,7 @@ export function HeroSectionNoI18n({ onDemoClick, onExploreClick }: HeroSectionNo
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Enhanced scroll indicator */}
       <motion.div
         variants={fadeIn("up", 1)}
         initial="hidden"

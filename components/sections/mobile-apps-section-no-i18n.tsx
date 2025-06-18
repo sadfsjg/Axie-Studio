@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import Image from "next/image"
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { CheckCircle, Search, Smartphone, Wifi, Bell, Calendar, Award, ArrowRight } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { fadeIn } from "@/lib/animation"
@@ -11,7 +11,6 @@ import { SectionBackground } from "@/components/section-background"
 export function MobileAppsSectionNoI18n({ onDemoClick }: { onDemoClick?: () => void }) {
   const [activeTab, setActiveTab] = useState("affes")
   const containerRef = useRef(null)
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" })
 
   const salonApps = [
     {

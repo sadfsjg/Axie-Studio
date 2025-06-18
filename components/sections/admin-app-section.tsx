@@ -57,7 +57,7 @@ export function AdminAppSection() {
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Allt du behöver för att hantera din verksamhet</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-blue-200 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-blue-100 p-2 rounded-full">
                     <Calendar className="h-5 w-5 text-blue-600" />
@@ -69,7 +69,7 @@ export function AdminAppSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-amber-200 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-amber-100 p-2 rounded-full">
                     <Bell className="h-5 w-5 text-amber-600" />
@@ -81,7 +81,7 @@ export function AdminAppSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-red-200 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-red-100 p-2 rounded-full">
                     <Clock className="h-5 w-5 text-red-600" />
@@ -93,7 +93,7 @@ export function AdminAppSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-purple-200 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-purple-100 p-2 rounded-full">
                     <Users className="h-5 w-5 text-purple-600" />
@@ -105,7 +105,7 @@ export function AdminAppSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-green-200 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-green-100 p-2 rounded-full">
                     <BarChart className="h-5 w-5 text-green-600" />
@@ -117,7 +117,7 @@ export function AdminAppSection() {
                 </CardContent>
               </Card>
 
-              <Card className="border border-slate-200">
+              <Card className="border border-slate-200 hover:shadow-md hover:border-slate-300 transition-all duration-300">
                 <CardContent className="p-4 flex items-start">
                   <div className="mr-4 mt-1 bg-slate-100 p-2 rounded-full">
                     <Settings className="h-5 w-5 text-slate-600" />

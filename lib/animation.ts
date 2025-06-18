@@ -52,7 +52,7 @@ export const slideInFromLeft = (delay = 0, duration = 0.5): Variants => {
       x: "-100%",
       opacity: 0,
     },
-    show: {
+    visible: {
       x: 0,
       opacity: 1,
       transition: {
@@ -74,7 +74,7 @@ export const slideInFromRight = (delay = 0, duration = 0.5): Variants => {
       x: "100%",
       opacity: 0,
     },
-    show: {
+    visible: {
       x: 0,
       opacity: 1,
       transition: {
@@ -96,7 +96,7 @@ export const slideInFromTop = (delay = 0, duration = 0.5): Variants => {
       y: "-100%",
       opacity: 0,
     },
-    show: {
+    visible: {
       y: 0,
       opacity: 1,
       transition: {
@@ -118,7 +118,7 @@ export const slideInFromBottom = (delay = 0, duration = 0.5): Variants => {
       y: "100%",
       opacity: 0,
     },
-    show: {
+    visible: {
       y: 0,
       opacity: 1,
       transition: {
